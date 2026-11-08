@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Shopping Cart</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    @for (i of items; track i.product.id) {
+      <ion-item>
+        <ion-label>
+          <h2>{{ i.product.name }}</h2>
+          <p>Qty: {{ i.quantity }} × ₱{{ i.product.price }}</p>
+        </ion-label>
+        <ion-label slot="end">₱{{ i.product.price * i.quantity }}</ion-label>
+      </ion-item>
+    }
+    <ion-item>
+      <ion-label>Subtotal</ion-label>
+      <ion-label slot="end">₱{{ subtotal }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Shipping</ion-label>
+      <ion-label slot="end">₱{{ shipping }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label><strong>Total</strong></ion-label>
+      <ion-label slot="end"><strong>₱{{ total }}</strong></ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" routerLink="/checkout">Proceed to Checkout</ion-button>
+  <ion-button expand="block" fill="outline" routerLink="/products">Continue Shopping</ion-button>
+</ion-content>

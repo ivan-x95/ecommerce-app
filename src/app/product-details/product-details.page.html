@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/products"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Product Details</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/cart">Cart</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <img [src]="product.image" [alt]="product.name" />
+    <ion-card-header>
+      <ion-card-title>{{ product.name }}</ion-card-title>
+      <ion-card-subtitle>₱{{ product.price }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      {{ product.description }}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="block" (click)="addToCart()">Add to Cart</ion-button>
+  <ion-button expand="block" fill="outline" routerLink="/products">Back to Products</ion-button>
+</ion-content>

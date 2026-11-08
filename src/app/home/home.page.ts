@@ -1,12 +1,19 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular';
+import { RouterLink } from '@angular/router';
+import {
+  IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonButton,
+  IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent,
+} from '@ionic/angular';
+import { PRODUCTS } from '../data/products';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent],
+  imports: [
+    RouterLink, IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonButton,
+    IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent,
+  ],
 })
 export class HomePage {
-  constructor() {}
+  featured = PRODUCTS.slice(0, 3);
 }

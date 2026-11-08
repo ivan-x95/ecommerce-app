@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/cart"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Checkout</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item>
+      <ion-input label="Customer Name" labelPlacement="floating" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Address" labelPlacement="floating" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Contact Number" labelPlacement="floating" type="tel"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" (click)="checkout()">Checkout</ion-button>
+</ion-content>
